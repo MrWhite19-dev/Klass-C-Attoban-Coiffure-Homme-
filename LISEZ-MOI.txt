@@ -1,0 +1,26 @@
+BEXLEY ANGRÉ — MINI-SITE E-COMMERCE (DÉMO)
+
+FICHIERS
+- index.html : page d'accueil
+- boutique.html : catalogue, panier, favoris et formulaire de commande
+- style.css : design responsive smartphone/tablette/ordinateur
+- app.js : interactions et lien WhatsApp
+
+POUR TESTER
+1. Décompressez le dossier.
+2. Ouvrez index.html dans Chrome, Edge ou Firefox.
+3. Accédez à « La boutique », ajoutez des produits au panier et testez les favoris.
+4. Pour les commandes WhatsApp, vérifiez le numéro dans app.js, ligne WHATSAPP_NUMBER.
+
+IMPORTANT
+- Le numéro 01 72 25 4141 provient des informations fournies, mais il faut confirmer qu'il est bien associé à WhatsApp. Dans app.js, WHATSAPP_NUMBER est écrit au format international sans + ni espaces. Remplacez-le par le numéro WhatsApp officiel confirmé.
+- Les produits et photos servent de maquette illustrative : ils ne sont pas un inventaire officiel BEXLEY. Les prix sont volontairement « à confirmer » car aucun tarif produit n'a été fourni.
+- Le panier et les favoris sont conservés dans le navigateur de l'appareil via localStorage.
+- Ce projet est un front-end fonctionnel avec redirection vers WhatsApp. Il ne comprend PAS de véritable backend, base de données, comptes clients, gestion des stocks, paiement en ligne ou tableau d'administration. Pour cela, il faudra ajouter un serveur/API et une base de données.
+- Le site utilise des photos distantes Unsplash et des polices Google Fonts : une connexion Internet est nécessaire pour les afficher.
+- Il s'agit d'une maquette indépendante de démonstration et non d'un site officiel certifié de la marque.
+
+FONCTION FAVORIS (mise à jour)
+- Le compteur du bouton Favoris affiche le nombre de produits enregistrés.
+- Un clic sur Favoris ouvre une fenêtre modale responsive avec la liste des produits, le bouton Ajouter au panier et Retirer.
+- La fenêtre se ferme avec la croix, en cliquant à l’extérieur ou avec la touche Échap.

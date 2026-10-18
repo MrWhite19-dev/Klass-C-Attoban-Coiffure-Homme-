@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sélection et commande de produits BEXLEY Angré par WhatsApp.">
+  <title>La boutique — BEXLEY Angré</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">BEXLEY ANGRÉ · Élégance au quotidien · Commande par WhatsApp</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="BEXLEY Angré accueil"><span class="brand-mark">B</span><span><strong>BEXLEY</strong><small>ANGRÉ · ABIDJAN</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav"><a href="index.html">Accueil</a><a class="active" href="boutique.html">La boutique</a><a href="#produits">Nos produits</a><a href="#contact">Contact</a></nav>
+    <div class="header-actions"><a class="icon-action favorites-trigger" href="#favoris-popup" aria-label="Ouvrir les favoris" aria-haspopup="dialog" aria-controls="favoritesModal">♡ Favoris <span class="count" id="favCount">0</span></a><a class="icon-action cart-link" href="#panier">Panier <span class="count" id="cartCount">0</span></a></div>
+  </header>
+
+  <main>
+    <section class="page-heading"><p class="eyebrow">BEXLEY ANGRÉ · ABIDJAN</p><h1>La boutique <em>en ligne.</em></h1><p>Explorez la sélection, ajoutez vos coups de cœur en favoris et préparez votre demande de commande.</p></section>
+    <section class="shop-layout section" id="produits">
+      <div class="shop-main">
+        <div class="shop-toolbar"><div><p class="eyebrow">NOTRE SÉLECTION</p><h2>Les produits</h2></div><label class="search-box"><span>⌕</span><input id="productSearch" type="search" placeholder="Rechercher un article…" aria-label="Rechercher un produit"></label></div>
+        <div class="filter-row"><button class="filter-chip active" data-filter="Tous">Tout voir</button><button class="filter-chip" data-filter="Chaussures">Chaussures</button><button class="filter-chip" data-filter="Accessoires">Accessoires</button></div>
+        <div class="product-grid shop-products" id="shopProducts"></div>
+        <div class="empty-state" id="emptyProducts" hidden>Aucun article ne correspond à votre recherche.</div>
+      </div>
+      <aside class="shop-sidebar">
+        <section class="side-card" id="panier"><div class="side-heading"><div><p class="eyebrow">VOTRE SÉLECTION</p><h2>Mon panier <span class="side-count" id="sideCartCount">0</span></h2></div><span class="side-symbol">▤</span></div><div id="cartItems" class="cart-items"><p class="empty-note">Votre panier est encore vide. Ajoutez un article pour commencer.</p></div><div class="cart-total"><span>Nombre d’articles</span><strong id="cartQuantity">0</strong></div><p class="cart-disclaimer">Les prix et disponibilités doivent être confirmés par la boutique avant validation.</p><button class="btn btn-dark btn-full" id="checkoutButton">Commander sur WhatsApp <span>↗</span></button><button class="clear-button" id="clearCart">Vider le panier</button></section>
+        <section class="side-card favorites-card" id="favoris"><div class="side-heading"><div><p class="eyebrow">À GARDER EN VUE</p><h2>Mes favoris <span class="side-count" id="sideFavCount">0</span></h2></div><span class="side-symbol pink-symbol">♡</span></div><div id="favoriteItems"><p class="empty-note">Vos favoris apparaîtront ici.</p></div></section>
+      </aside>
+    </section>
+
+    <section class="section order-contact" id="contact">
+      <div class="contact-copy"><p class="eyebrow light">UNE QUESTION ?</p><h2>Parlons de <em>votre commande.</em></h2><p>Remplissez le formulaire. Votre demande sera préparée dans WhatsApp afin que vous puissiez l’envoyer à la boutique.</p><div class="contact-detail"><span>⌖</span><div><strong>Adresse</strong><p>Tranche, Angré, 7ème — Abidjan</p></div></div><div class="contact-detail"><span>☎</span><div><strong>Téléphone</strong><p>01 72 25 4141</p></div></div><div class="contact-detail"><span>◷</span><div><strong>Horaires affichés</strong><p>Ouverture annoncée à 10 h. Appelez pour confirmer.</p></div></div></div>
+      <form class="order-form" id="orderForm"><p class="eyebrow">FORMULAIRE DE COMMANDE</p><h3>Préparons votre demande</h3><div class="form-grid"><label>Nom complet<input name="customerName" required placeholder="Votre nom"></label><label>Téléphone<input name="customerPhone" required type="tel" placeholder="Votre numéro"></label><label class="full-field">Article(s) souhaité(s)<textarea name="customerItems" id="formItems" rows="3" placeholder="Nom de l'article, pointure, taille, couleur…" required></textarea></label><label class="full-field">Mode de réception<select name="delivery"><option value="À confirmer avec la boutique">À confirmer avec la boutique</option><option value="Livraison souhaitée">Livraison souhaitée</option><option value="Retrait en boutique souhaité">Retrait en boutique souhaité</option></select></label><label class="full-field">Précisions (facultatif)<textarea name="notes" rows="2" placeholder="Votre message…"></textarea></label></div><button class="btn btn-dark btn-full" type="submit">Préparer la commande WhatsApp <span>↗</span></button><p class="form-hint">Aucun paiement n’est effectué sur ce site. Vous vérifierez la commande avec la boutique dans WhatsApp.</p></form>
+    </section>
+  </main>
+
+  <div class="favorites-modal" id="favoritesModal" aria-hidden="true">
+    <div class="favorites-backdrop" data-close-favorites></div>
+    <section class="favorites-dialog" role="dialog" aria-modal="true" aria-labelledby="favoritesModalTitle">
+      <div class="favorites-modal-header"><div><p class="eyebrow">VOS COUPS DE CŒUR</p><h2 id="favoritesModalTitle">Mes favoris <span class="side-count" id="modalFavCount">0</span></h2></div><button type="button" class="favorites-close" data-close-favorites aria-label="Fermer la fenêtre">×</button></div>
+      <p class="favorites-modal-intro">Retrouvez ici les articles que vous avez enregistrés.</p>
+      <div class="favorites-modal-list" id="modalFavoriteItems"><p class="empty-note">Vous n’avez pas encore ajouté de favoris.</p></div>
+      <div class="favorites-modal-footer"><button type="button" class="clear-button" id="clearFavorites">Effacer tous les favoris</button><button type="button" class="btn btn-dark" id="continueShopping">Continuer mes achats <span>→</span></button></div>
+    </section>
+  </div>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">B</span><span><strong>BEXLEY</strong><small>ANGRÉ · ABIDJAN</small></span></a><p>Tranche, Angré, 7ème · Abidjan, Côte d’Ivoire</p><p>© <span id="year"></span> BEXLEY Angré — Site de démonstration indépendant.</p><a class="whatsapp-float" href="#" data-whatsapp aria-label="Contacter BEXLEY sur WhatsApp">☏ <span>Écrire sur WhatsApp</span></a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
